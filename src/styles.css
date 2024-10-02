@@ -1,0 +1,257 @@
+/* General styles */
+body, html, .App {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Header styles */
+.header {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.display-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon, .down-icon {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px;
+}
+
+/* Modal styles */
+.modal {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  width: 220px; /* Adjust width as necessary */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 1001; /* Place modal above overlay */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Overlay styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0); /* Transparent to allow click-through */
+  z-index: 1000; /* Behind modal */
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px; /* Space between items */
+}
+
+/* Modal Item: Grouping and Ordering containers */
+.modal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Modal Label */
+.modal-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  margin-right: 8px;
+}
+
+/* Select Box Styling */
+.select-box {
+  padding: 4px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 120px;
+}
+
+.select-box:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+
+/* Board styles */
+.board {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  overflow-x: auto;
+  flex: 1;
+  align-items: flex-start;
+}
+
+
+
+/* Column styles */
+.column {
+  min-width: 260px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* Column Header Styling */
+.column-header {
+  display: flex; /* Use flexbox to align elements */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Evenly space elements */
+  margin-bottom: 10px; /* Add space below the header */
+}
+
+.column-left {
+  display: flex;
+  align-items: center;
+}
+
+.column-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Status Icon Styles */
+.status-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px; /* Space between the icon and the title */
+}
+
+/* Column Title Styles */
+.column-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  color: #333333;
+}
+
+/* Add Icon Styles */
+.add-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0 12px; /* Space on both sides */
+  cursor: pointer;
+}
+
+/* 3-Dot Menu Icon Styles */
+.dot-menu-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+/* Add a subtle hover effect for icons */
+.add-icon:hover, .dot-menu-icon:hover {
+  filter: brightness(85%);
+}
+
+/* Board Header Row */
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.column-header h2 {
+  display: flex;
+  align-items: center;
+}
+
+/* Card styles */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-id {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-tag {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.priority-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+/* Additional Styles for Page Layout */
+.board {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+
