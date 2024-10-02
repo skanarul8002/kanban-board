@@ -47,12 +47,12 @@ body, html, .App {
   position: absolute;
   top: 40px;
   left: 15px;
-  width: 220px; /* Adjust width as necessary */
+  width: 220px;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 12px;
-  z-index: 1001; /* Place modal above overlay */
+  z-index: 1001;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,8 +63,8 @@ body, html, .App {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0); /* Transparent to allow click-through */
-  z-index: 1000; /* Behind modal */
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
 }
 
 /* Modal Content */
@@ -72,10 +72,9 @@ body, html, .App {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px; /* Space between items */
+  gap: 12px;
 }
 
-/* Modal Item: Grouping and Ordering containers */
 .modal-item {
   display: flex;
   align-items: center;
@@ -83,7 +82,6 @@ body, html, .App {
   width: 100%;
 }
 
-/* Modal Label */
 .modal-label {
   font-size: 14px;
   font-weight: 500;
@@ -91,7 +89,6 @@ body, html, .App {
   margin-right: 8px;
 }
 
-/* Select Box Styling */
 .select-box {
   padding: 4px 8px;
   border: 1px solid #e0e0e0;
@@ -105,8 +102,6 @@ body, html, .App {
   outline: none;
 }
 
-
-
 /* Board styles */
 .board {
   display: flex;
@@ -115,9 +110,9 @@ body, html, .App {
   overflow-x: auto;
   flex: 1;
   align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
-
-
 
 /* Column styles */
 .column {
@@ -129,12 +124,12 @@ body, html, .App {
   overflow-y: auto;
 }
 
-/* Column Header Styling */
+/* Column Header */
 .column-header {
-  display: flex; /* Use flexbox to align elements */
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Evenly space elements */
-  margin-bottom: 10px; /* Add space below the header */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .column-left {
@@ -147,14 +142,12 @@ body, html, .App {
   align-items: center;
 }
 
-/* Status Icon Styles */
 .status-icon {
   width: 16px;
   height: 16px;
-  margin-right: 8px; /* Space between the icon and the title */
+  margin-right: 8px;
 }
 
-/* Column Title Styles */
 .column-title {
   font-size: 14px;
   font-weight: 500;
@@ -162,15 +155,13 @@ body, html, .App {
   color: #333333;
 }
 
-/* Add Icon Styles */
 .add-icon {
   width: 16px;
   height: 16px;
-  margin: 0 12px; /* Space on both sides */
+  margin: 0 12px;
   cursor: pointer;
 }
 
-/* 3-Dot Menu Icon Styles */
 .dot-menu-icon {
   width: 16px;
   height: 16px;
@@ -178,12 +169,10 @@ body, html, .App {
   margin-left: 12px;
 }
 
-/* Add a subtle hover effect for icons */
 .add-icon:hover, .dot-menu-icon:hover {
   filter: brightness(85%);
 }
 
-/* Board Header Row */
 .board-header {
   display: flex;
   justify-content: space-between;
@@ -248,10 +237,63 @@ body, html, .App {
   margin-right: 8px;
 }
 
-/* Additional Styles for Page Layout */
-.board {
-  flex-wrap: wrap;
-  justify-content: flex-start;
+/* Media Queries for Responsive Design */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+  .header, .board, .column, .card {
+    width: 100%;
+    padding: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .column {
+    min-width: 100%; /* Column spans entire width */
+    height: auto; /* Adjust height to fit content */
+  }
+
+  .modal {
+    width: 90%; /* Modal spans larger width on small screens */
+    left: 5%; /* Center modal */
+  }
 }
 
+/* Mobile devices */
+@media (max-width: 480px) {
+  .header, .board, .column, .card {
+    width: 100%;
+    padding: 5px;
+  }
 
+  .column {
+    min-width: 100%;
+    height: auto; /* Adjust height to fit content */
+    padding: 5px; /* Reduce padding */
+  }
+
+  .modal {
+    width: 95%; /* Modal spans almost entire width on mobile */
+    left: 2.5%; /* Center modal */
+    top: 10%; /* Position below header */
+  }
+
+  .column-header {
+    flex-direction: column; /* Stack header content */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .column-left, .column-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .card-header, .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
